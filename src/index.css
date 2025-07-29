@@ -2,39 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Professional SaaS Design System for InsightVoice
+All colors MUST be HSL. Modern gradient-based design with professional blues and teals.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Background System */
+    --background: 240 10% 3.9%;
+    --background-secondary: 240 8% 6%;
+    --background-tertiary: 240 6% 10%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card System */
+    --card: 240 8% 6%;
+    --card-secondary: 240 6% 10%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover System */
+    --popover: 240 8% 6%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* Brand Primary - Deep Professional Blue */
+    --primary: 217 91% 60%;
+    --primary-dark: 217 91% 45%;
+    --primary-light: 217 91% 75%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Brand Secondary - Modern Teal */
+    --secondary: 174 72% 56%;
+    --secondary-dark: 174 72% 41%;
+    --secondary-light: 174 72% 71%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
+    /* Accent System */
+    --accent: 240 6% 10%;
+    --accent-foreground: 210 40% 98%;
+    
+    /* Success & Status Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 240 10% 3.9%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Neutral System */
+    --muted: 240 6% 10%;
+    --muted-foreground: 240 5% 64.9%;
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: 217 91% 60%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(174 72% 56%));
+    --gradient-secondary: linear-gradient(135deg, hsl(174 72% 56%), hsl(217 91% 75%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(174 72% 56%) 50%, hsl(142 76% 36%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(240 8% 6%), hsl(240 6% 10%));
+    
+    /* Shadows */
+    --shadow-primary: 0 10px 30px -10px hsl(217 91% 60% / 0.3);
+    --shadow-secondary: 0 10px 30px -10px hsl(174 72% 56% / 0.3);
+    --shadow-card: 0 4px 12px -2px hsl(240 10% 3.9% / 0.3);
+    --shadow-elegant: 0 20px 40px -12px hsl(217 91% 60% / 0.25);
+
+    /* Animation Variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
@@ -101,5 +135,99 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Components & Utilities */
+@layer components {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .shadow-primary {
+    box-shadow: var(--shadow-primary);
+  }
+  
+  .shadow-secondary {
+    box-shadow: var(--shadow-secondary);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .hero-text {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .hover-lift {
+    @apply transition-smooth hover:scale-105 hover:shadow-elegant;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
