@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { 
   Mic, 
   FileText, 
@@ -14,117 +15,89 @@ import {
 const features = [
   {
     icon: Mic,
-    title: "Smart Recording",
-    description: "One-click recording with automatic cloud sync and multi-device support",
-    color: "text-primary"
-  },
-  {
-    icon: FileText,
-    title: "AI Transcription",
-    description: "99% accurate transcription with speaker identification and timestamps",
-    color: "text-secondary"
+    title: "Intelligent Transcription",
+    description: "Industry-leading accuracy with real-time processing across 65+ languages and dialects"
   },
   {
     icon: Brain,
-    title: "Sentiment Analysis",
-    description: "Real-time emotion detection and conversation tone analysis",
-    color: "text-success"
-  },
-  {
-    icon: Search,
-    title: "Intelligent Search",
-    description: "Full-text search across all recordings with smart filters and tags",
-    color: "text-warning"
+    title: "Advanced AI Analytics",
+    description: "Deep learning algorithms extract key insights, action items, and strategic decisions automatically"
   },
   {
     icon: BarChart3,
-    title: "Advanced Analytics",
-    description: "Deep insights into speaking patterns, topics, and communication effectiveness",
-    color: "text-primary"
-  },
-  {
-    icon: Users,
-    title: "Team Collaboration",
-    description: "Share insights, add comments, and collaborate on call analysis",
-    color: "text-secondary"
-  },
-  {
-    icon: Globe,
-    title: "Multi-Language",
-    description: "Support for 50+ languages with real-time translation capabilities",
-    color: "text-success"
-  },
-  {
-    icon: Clock,
-    title: "Real-Time Processing",
-    description: "Instant analysis and insights as your conversations happen",
-    color: "text-warning"
+    title: "Sentiment Intelligence",
+    description: "Comprehensive emotion analysis and customer satisfaction tracking with predictive insights"
   },
   {
     icon: Shield,
     title: "Enterprise Security",
-    description: "End-to-end encryption, GDPR compliance, and enterprise-grade security",
-    color: "text-destructive"
+    description: "Bank-level encryption, SOC 2 compliance, and complete data sovereignty controls"
+  },
+  {
+    icon: Users,
+    title: "Seamless Integration",
+    description: "Native integration with CRM, collaboration tools, and existing business workflows"
+  },
+  {
+    icon: Search,
+    title: "Executive Reporting",
+    description: "C-suite dashboards with KPIs, trends analysis, and automated performance reporting"
   }
 ];
 
 const Features = () => {
   return (
-    <section id="features" className="py-24 bg-background-secondary">
-      <div className="container mx-auto px-6">
+    <section id="features" className="corporate-spacing bg-gradient-to-b from-background to-background-secondary">
+      <div className="container mx-auto px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-6">
-            Powerful Features for
-            <br />
-            <span className="hero-text">Every Conversation</span>
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6 uppercase tracking-wide">
+            Enterprise-Grade Features
+          </div>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+            Built for 
+            <span className="text-primary"> Excellence</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From automatic transcription to advanced analytics, InsightVoice provides 
-            everything you need to extract maximum value from your conversations.
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            Transform every conversation into strategic advantage with our comprehensive suite of AI-powered tools
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className="gradient-card border-border/50 hover-lift group"
+              className="group relative bg-card border border-border rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
             >
-              <CardContent className="p-8">
-                <div className="mb-6">
-                  <div className="w-12 h-12 gradient-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-smooth">
-                    <feature.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 text-foreground">
-                    {feature.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <CardContent className="relative p-0">
+                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <feature.icon className="w-8 h-8 text-primary-foreground" />
                 </div>
+                <h3 className="text-2xl font-bold mb-4 text-foreground">{feature.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-lg">{feature.description}</p>
               </CardContent>
             </Card>
           ))}
         </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="glass-effect rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">
-              Ready to unlock your conversation insights?
+        
+        {/* Enterprise CTA Section */}
+        <div className="text-center mt-20">
+          <div className="bg-card border border-border rounded-3xl p-12 max-w-4xl mx-auto shadow-lg">
+            <h3 className="text-3xl font-bold mb-6">
+              Ready to Transform Your Business Communications?
             </h3>
-            <p className="text-muted-foreground mb-6">
-              Join thousands of professionals who trust InsightVoice for their call analysis needs.
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Join industry leaders who trust CallInsight to deliver actionable intelligence from every conversation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="gradient-primary text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-smooth shadow-primary">
-                Start Free Trial
-              </button>
-              <button className="border border-border bg-card text-foreground px-8 py-3 rounded-lg font-semibold hover:bg-accent transition-smooth">
-                View Pricing
-              </button>
+            <div className="flex flex-col lg:flex-row gap-4 justify-center">
+              <Button variant="hero" size="lg" className="px-12 py-4 text-lg font-semibold">
+                Start Enterprise Trial
+              </Button>
+              <Button variant="outline" size="lg" className="px-12 py-4 text-lg font-semibold">
+                Schedule Demo
+              </Button>
             </div>
           </div>
         </div>
