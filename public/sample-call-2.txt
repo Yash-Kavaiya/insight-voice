@@ -1,0 +1,3 @@
+This is a placeholder for Sample Team Meeting audio file.
+In a real implementation, this would be an actual audio file (.wav, .mp3, etc.)
+For demo purposes, users can still test the upload interface.

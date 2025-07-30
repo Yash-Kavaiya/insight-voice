@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
   Mic, 
   Clock, 
@@ -11,8 +12,10 @@ import {
   Search,
   Calendar,
   Heart,
-  Zap
+  Zap,
+  FileAudio
 } from "lucide-react";
+import AudioRecordingFeature from "./AudioRecordingFeature";
 
 const Dashboard = () => {
   // Sample data for demonstration
@@ -86,6 +89,18 @@ const Dashboard = () => {
             </Button>
           </div>
         </div>
+
+        {/* Main Content Tabs */}
+        <Tabs defaultValue="overview" className="w-full">
+          <TabsList className="grid w-full grid-cols-2">
+            <TabsTrigger value="overview">Overview</TabsTrigger>
+            <TabsTrigger value="analysis" className="flex items-center gap-2">
+              <FileAudio className="w-4 h-4" />
+              Audio Analysis
+            </TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="overview" className="space-y-8 mt-8">
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -260,6 +275,12 @@ const Dashboard = () => {
             </CardContent>
           </Card>
         </div>
+          </TabsContent>
+          
+          <TabsContent value="analysis" className="mt-8">
+            <AudioRecordingFeature />
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   );
