@@ -3,13 +3,14 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Dashboard from "@/components/Dashboard";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const [currentView, setCurrentView] = useState<'landing' | 'dashboard'>('landing');
 
   if (currentView === 'dashboard') {
-    return <Dashboard />;
+    return <Dashboard onBackToHome={() => setCurrentView('landing')} />;
   }
 
   return (
@@ -36,6 +37,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };

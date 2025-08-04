@@ -13,11 +13,13 @@ import {
   Calendar,
   Heart,
   Zap,
-  FileAudio
+  FileAudio,
+  ArrowLeft,
+  Home
 } from "lucide-react";
 import AudioRecordingFeature from "./AudioRecordingFeature";
 
-const Dashboard = () => {
+const Dashboard = ({ onBackToHome }: { onBackToHome?: () => void }) => {
   // Sample data for demonstration
   const recentRecordings = [
     {
@@ -74,9 +76,22 @@ const Dashboard = () => {
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
-          <div>
-            <h1 className="text-3xl font-bold mb-2">Dashboard</h1>
-            <p className="text-muted-foreground">Welcome back! Here's your conversation insights.</p>
+          <div className="flex items-center gap-4">
+            {onBackToHome && (
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                onClick={onBackToHome}
+                className="flex items-center gap-2"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Back to Home
+              </Button>
+            )}
+            <div>
+              <h1 className="text-3xl font-bold mb-2">Dashboard</h1>
+              <p className="text-muted-foreground">Welcome back! Here's your conversation insights.</p>
+            </div>
           </div>
           <div className="flex items-center gap-3">
             <Button variant="glass" className="flex items-center gap-2">
