@@ -511,8 +511,8 @@ gantt
     AI Integration          :done, 2024-03, 2024-05
     Real-time Processing    :done, 2024-04, 2024-06
     section Phase 3
-    Advanced Analytics      :active, 2025-11, 2026-02
-    Multi-language Support  :active, 2025-12, 2026-03
+    Advanced Analytics      :active, 2025-10, 2026-02
+    Multi-language Support  :active, 2025-11, 2026-03
     section Phase 4
     Enterprise Features     :2026-03, 2026-06
     API & Integrations      :2026-04, 2026-07
